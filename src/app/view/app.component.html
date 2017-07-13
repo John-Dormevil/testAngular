@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        Welcome to {{getTitle()}}!!
+    </h1>
+    <div>
+        <label>id:</label>
+        <input [(ngModel)]="getNewHero().id" placeholder="id" value=''>
+    </div>
+    <div>
+        <label>name:</label>
+        <input [(ngModel)]="getNewHero().name" placeholder="name">
+    </div>
+    <button type="button" (click)="addHero()">ADD Heroes</button>
+    <h2>My Heroes</h2>
+    <ul class="heroes">
+        <li *ngFor="let hero of getHeroes()" (click)="onSelect(hero)">
+            <span class="badge">{{hero.getId()}}</span>{{hero.getName()}}
+        </li>
+    </ul>
+    <div *ngIf="getSelectedHero()">
+        <h2> {{getSelectedHero().getName()}} details!</h2>
+        <div><label>id: </label>{{getSelectedHero().getId()}}</div>
+        <div>
+            <label>name:</label>
+            <input [(ngModel)]="getSelectedHero().name" placeholder="name">
+        </div>
+    </div>
+    <app-hero></app-hero>
+</div>
