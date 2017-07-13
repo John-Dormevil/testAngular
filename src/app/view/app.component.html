@@ -1,15 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
     <h1>
         Welcome to {{getTitle()}}!!
     </h1>
-    <div>
+    <div class="form-field">
         <label>id:</label>
-        <input [(ngModel)]="getNewHero().id" placeholder="id" value=''>
+        <input [(ngModel)]="getNewHero().id" value=''>
     </div>
-    <div>
+    <div class="form-field">
         <label>name:</label>
-        <input [(ngModel)]="getNewHero().name" placeholder="name">
+        <input [(ngModel)]="getNewHero().name">
     </div>
     <button type="button" (click)="addHero()">ADD Heroes</button>
     <h2>My Heroes</h2>
@@ -19,9 +19,9 @@
         </li>
     </ul>
     <div *ngIf="getSelectedHero()">
-        <h2> {{getSelectedHero().getName()}} details!</h2>
-        <div><label>id: </label>{{getSelectedHero().getId()}}</div>
-        <div>
+        <h2> Detail </h2>
+        <div class="form-field"><label>id: </label> <span class="input-style"> {{getSelectedHero().getId()}} </span></div>
+        <div class="form-field">
             <label>name:</label>
             <input [(ngModel)]="getSelectedHero().name" placeholder="name">
         </div>
