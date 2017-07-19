@@ -1,0 +1,23 @@
+<div class="form-field">
+    <label>id:</label>
+    <input [(ngModel)]="getNewHero().id" value=''>
+</div>
+<div class="form-field">
+    <label>name:</label>
+    <input [(ngModel)]="getNewHero().name">
+</div>
+<button type="button" (click)="addHero()">ADD Heroes</button>
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of getHeroes()" (click)="onSelect(hero)">
+        <span class="badge">{{hero.getId()}}</span>{{hero.getName()}}
+    </li>
+</ul>
+<div *ngIf="getSelectedHero()">
+    <h2> Detail </h2>
+    <div class="form-field"><label>id: </label> <span class="input-style"> {{getSelectedHero().getId()}} </span></div>
+    <div class="form-field">
+        <label>name:</label>
+        <input [(ngModel)]="getSelectedHero().name" placeholder="name">
+    </div>
+</div>
